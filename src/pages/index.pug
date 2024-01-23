@@ -1,0 +1,202 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' href='../build/styles/normalize.css')
+        link(rel='stylesheet' href='../fonts/stylesheet.css')
+        link(rel='stylesheet' href='../build/styles/style.css')
+        title Landing page
+
+    body 
+        header 
+            section.header-main-section
+                .right
+                    a(href="#") 
+                        img(src="../images/logo.png", alt="")
+                .left
+                    nav.menu
+                        ul.menu_list
+                            each name in ['Concierge', 'Rides', 'For Business']
+                                li
+                                    a(href="#")= name
+                    .languages
+                        span EN
+                    .wrapper-button
+                        button.small-button.slide_right(type='button') Start now
+            section.header-text
+                h1.title Your future<br>is electric
+                p.description Get your own ebike or emoped<br>with our flexible subscription
+                button.small-button.slide_right(type='button') Start now
+        main
+            section.first-section.paddingSection
+                .wrapper
+                    h3.title-section-light How it works
+                    ol.numbering-list
+                        li Pick your city
+                        li Choose your ride
+                        li Delivery to your door
+                        li Ride freely
+                    button.big-button.slide_right(type='button') Start now
+                    img.image(src="../images/image.png", alt="image")
+            section.second-section.paddingSection
+                .wrapper
+                    h3.title-section-dark Move your way 
+                    p.text Choose the electric ride that suits your lifestyle.
+                    .cart-product-flex
+                        .cart-product
+                            img(src="../images/image2.png", alt="image")
+                            .price
+                                p From 
+                                    span €59 €39
+                                span.info-s Winter offer
+                            p.title-product Dance One Step
+                            p.name-product Ebike
+                            a.link-product.slide_right See details
+                        .cart-product
+                            img(src="../images/image3.png", alt="image")
+                            .price
+                                p From 
+                                    span €59 €39
+                                span.info-s Winter offer
+                            p.title-product Dance One
+                            p.name-product Ebike
+                            a.link-product.slide_right See details
+                        .cart-product
+                            img(src="../images/image4.png", alt="image")
+                            .price
+                                p From 
+                                    span €59 €39
+                                span.info-s Winter offer
+                            p.title-product Dance Moped
+                            p.name-product Ebike
+                            a.link-product.slide_right See details
+            section.third-section.paddingSection
+                .wrapper
+                    .right-info
+                        h3.title-section-dark Just ride—<br>we’ll take care<br>of the rest
+                        p Your local Concierge Team will repair<br>or replace your ride within 24 hours—<br>all included with your subscription.
+                        a.link-next.slide_right See details
+                    .left-image 
+                        img(src="../images/image5.png", alt="image")
+            section.fourth-section.paddingSection
+                .wrapper
+                    .left-block
+                        h3 Your city is<br>our city
+                        p Our rides are available in<br>5 European cities — and<br>counting.
+                        button.big-button.slide_right(type='button') Start now
+                        p Want to see Dance in your city?
+                    .right-block 
+                        h4 Berlin
+                        h4 Hamburg
+                        h4 Munich
+                        h4 Paris
+                        h4 Vienna
+            section.fifth-section.paddingSection
+                .wrapper
+                    .left-block
+                        h3.title-section-dark You’re in<br>charge
+                        p Your subscription is fully<br>flexible—with free<br>cancelation at any time<br>and no sign-up fees.
+                        .check-block 
+                            div 
+                                span Repairs within 24 hours
+                            div 
+                                span Replacements in case of theft
+                            div 
+                                span App to track your rides
+                            div 
+                                span Cancel anytime
+                    .wrapper-product
+                        .cart-product
+                            img(src="../images/image4.png", alt="image")
+                            .price
+                                p From 
+                                    span €59 €39
+                                span.info-s Winter offer
+                            p.title-product Dance Moped
+                            p.name-product Ebike
+                            button.big-button.slide_right(type='button') Start now
+                        .cart-product
+                            img(src="../images/image3.png", alt="image")
+                            .price
+                                p From 
+                                    span €59 €39
+                                span.info-s Winter offer
+                            p.title-product Dance Moped
+                            p.name-product Ebike
+                            button.big-button.slide_right(type='button') Start now
+            section.sixth-section.paddingSection
+                .wrapper
+                    .left-block
+                        h3.title-section-dark Want to<br>know<br>more?
+                        a.link-product.slide_right See details
+                    .right-block
+                        p How does Dance work?
+                        p How do I charge my Dance eride?
+                        p What accessories can I use with my ebike and emoped?
+                        p How do repairs work?
+                        p Can I test the ride before buying?
+                        p How do I cancel my membership?
+                        p What happens if my vehicle gets stolen?
+            section.seventh-section.paddingSection
+                .wrapper
+                    h3.title-section-dark What our members say
+                    .reviews-block
+                        .reviews-block-text
+                            p It's super efficient, no sweat, very stable and I get everywhere faster.
+                            p Luna, Berlin
+                        .reviews-block-text
+                            p My Dance bike just makes my commute light and fun.
+                            p James, Berlin
+                        .reviews-block-text
+                            p I don’t have to worry anymore about my old bike breaking down.
+                            p Travis, Hamburg
+        footer.footer
+            .wrapper
+                .left-block
+                    h3.footer-title Stay up to speed
+                    p.text-one Sign up to get the latest Dance offers,<br>updates, and tips straight to your inbox.
+                    label(for="email") 
+                        input.email(type='email', placeholder='your@email.de' name='email')
+                    p.text-two By checking this box, you allow Dance to collect data relating to the Dance newsletter, including whether it has been opened and clicked through. For more information.
+                .right-block
+                    .wrapper-menu
+                        p Menu
+                        nav.menu
+                            ul.menu_list
+                                each name in ['Rides', 'Concierge', 'For Business', 'Start now']
+                                    li
+                                        a(href="#")= name
+                    .wrapper-menu
+                        p Products
+                        nav.menu
+                            ul.menu_list
+                                each name in ['Ebikes', 'Moped']
+                                    li
+                                        a(href="#")= name
+                    .wrapper-menu
+                        p Company
+                        nav.menu
+                            ul.menu_list
+                                each name in ['About', 'Blog', 'Press', 'FAQ', 'Jobs']
+                                    li
+                                        a(href="#")= name
+                    .wrapper-menu
+                        p Legal
+                        nav.menu
+                            ul.menu_list
+                                each name in ['Privacy', 'Imprint', 'Cancel subscription']
+                                    li
+                                        a(href="#")= name
+            .wrapper
+                p.wrapper-social
+                    a.social.insta(href="/") 
+                    a.social.fac(href="/") 
+                    a.social.tw(href="/") 
+                    a.social.in(href="/") 
+
+
+                        
+
+
+

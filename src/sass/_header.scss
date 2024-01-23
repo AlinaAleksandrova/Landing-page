@@ -1,0 +1,54 @@
+@use '_variables' as *;
+@use '_mixin' as *;
+@use '_helpers' as *;
+.header-main-section {
+    padding: 15px 40px;
+    @include flex;
+    .left {
+        @include flex;
+        @include styleTextHeader ($whiteColorText, 18px, 18px);
+        align-items: $textAlignCem;
+        .menu {
+            &_list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                @include flex;
+                li {
+                    margin-right: 35px;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                    a {
+                        color: $whiteColorText;
+                        text-decoration: $none;
+                        position: relative;
+                        @include hoverLink;
+                    }
+                }
+            }
+        }
+        .languages {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+    }
+}
+
+.header-text {
+    text-align: $textAlignCem;
+    padding-top: 126px;
+    padding-bottom: 183px;
+    h1 {
+        @include styleTextHeader ($whiteColorText, 99px, 111px);
+        @include margin;
+        letter-spacing: 5px;
+    }
+    .description {
+        @include styleTextHeader ($whiteColorText, 21px, 23px);
+        margin: 60px 0;
+    }
+    button {
+        @include Button (42px);
+    }
+}

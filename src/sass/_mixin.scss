@@ -1,0 +1,86 @@
+@use '_variables' as *;
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin widthHeight($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin backgroundParameters {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin Button($h) {
+    @include widthHeight(183px, $h);
+    border-radius: 999px;
+    background: $backgroundButton;
+    border: $none;
+    color: $whiteColorText;
+}
+
+@mixin styleTextHeader($ct, $fs, $lh) {
+    color: $ct;
+    font-size: $fs;
+    font-weight: 400;
+    line-height: $lh;
+}
+
+@mixin paddingSection {
+    padding-top: 68px;
+    padding-bottom: 73px;
+}
+
+@mixin margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@mixin topBottom($t, $b) {
+    margin-top: $t;
+    margin-bottom: $b;
+}
+
+@mixin linkSeeDet($h) {
+    @include styleTextHeader ($textColorDark, 16px, 16px);
+    width: 180px;
+    height: $h;
+    border-radius: 999px;
+    border: 1px solid $textColorDark;
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    &::after {
+        content: '';
+        background-image: url('#{$path}arrow.png');
+        @include widthHeight(19px,
+        19px);
+        background-size: contain;
+        margin-left: 5px;
+    }
+}
+
+@mixin hoverLink {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        height: 1px;
+        background-color: $backgroundButton;
+        width: 0;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+    }
+    &:hover:after {
+        width: 100%;
+        right: 0;
+    }
+}

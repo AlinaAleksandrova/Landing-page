@@ -1,0 +1,241 @@
+@use '_variables' as *;
+@use '_mixin' as *;
+@use '_helpers' as *;
+.first-section {
+    position: relative;
+    .numbering-list {
+        @include styleTextHeader ($textColorLight, 28px, 34px);
+        @include topBottom (71px, 51px);
+        padding-left: 30px;
+        li {
+            margin-bottom: 24px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .image {
+        position: absolute;
+        top: 15%;
+        right: 0;
+    }
+}
+
+.second-section {
+    background-color: $grey;
+    .text {
+        @include styleTextHeader ($textColorDark, 20px, 24px);
+        @include topBottom (27px, 48px);
+    }
+    .cart-product-flex {
+        @include flex;
+        gap: 16px;
+        .cart-product {
+            border-radius: 16px;
+            background: $whiteColorText;
+            width: 335px;
+            padding: 32px 24px;
+            gap: 16px;
+            .price {
+                @include styleTextHeader ($textColorLight, 17px, 21px);
+                @include flex;
+                margin-bottom: 39px;
+                p {
+                    @include margin;
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .info-s {
+                @include widthHeight(107px, 26px);
+                border-radius: 20px;
+                background: #F1EEF8;
+                text-align: $textAlignCem;
+                @include styleTextHeader ($backgroundButton, 16px, 24px);
+            }
+            .title-product {
+                @include styleTextHeader ($textColorLight, 29px, 34px);
+                @include margin;
+            }
+            .name-product {
+                @include styleTextHeader ($textColorLight, 18px, 21px);
+                @include topBottom (0, 10px);
+            }
+            .link-product {
+                @include linkSeeDet(61px);
+            }
+        }
+    }
+}
+
+.third-section {
+    @include styleTextHeader ($textColorDark, 18px, 21px);
+    background-color: $grey;
+    .wrapper {
+        @include flex;
+        gap: 20px;
+        p {
+            @include topBottom (26px, 36px);
+        }
+        .link-next {
+            @include linkSeeDet(40px);
+        }
+        img {
+            transition: 1s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.fourth-section {
+    background-image: url('#{$path}background-image.png');
+    @include backgroundParameters;
+    background-attachment: fixed;
+    .wrapper {
+        @include flex;
+        align-items: $textAlignCem;
+        .left-block {
+            h3 {
+                @include styleTextHeader ($whiteColorText,
+                65px,
+                66px);
+                @include margin;
+            }
+            p {
+                @include styleTextHeader ($whiteColorText,
+                21px,
+                24px);
+                @include topBottom (12px,
+                29px);
+                &:last-of-type {
+                    @include topBottom (33px,
+                    0);
+                }
+            }
+        }
+        .right-block {
+            h4 {
+                @include styleTextHeader ($whiteColorText,
+                105px,
+                111px);
+                @include margin;
+                letter-spacing: 5px;
+                text-align: right;
+            }
+        }
+    }
+}
+
+.fifth-section {
+    .wrapper {
+        @include flex;
+        .left-block {
+            &>p {
+                @include topBottom (27px,
+                36px);
+            }
+            .check-block {
+                div {
+                    @include topBottom (0,
+                    16px);
+                    display: flex;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    span {
+                        padding: 8px 16px;
+                        border-radius: 40px;
+                        background: #F5F5F7;
+                        @include styleTextHeader ($textColorDark,
+                        16px,
+                        21px);
+                        &::before {
+                            content: '';
+                            @include widthHeight(16px,
+                            16px);
+                            background-image: url('#{$path}flag.png');
+                            background-size: contain;
+                            margin-right: 16px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        .wrapper-product {
+            @include flex;
+            gap: 16px;
+            .cart-product {
+                background-color: $grey;
+                .link-product {
+                    @include linkSeeDet(61px);
+                }
+            }
+        }
+    }
+}
+
+.sixth-section {
+    background-color: $grey;
+    .wrapper {
+        @include flex;
+        align-items: $textAlignCem;
+        .title-section-dark {
+            margin-bottom: 53px;
+        }
+        .link-product {
+            @include linkSeeDet(39px);
+        }
+        .right-block {
+            p {
+                @include styleTextHeader ($textColorDark,
+                20px,
+                24px);
+                @include topBottom (0,
+                45px);
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+                &::before {
+                    content: '';
+                    @include widthHeight(18px,
+                    17px);
+                    background-image: url('#{$path}plus.png');
+                    background-size: contain;
+                    margin-right: 26px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.seventh-section {
+    .title-section-dark {
+        margin-bottom: 100px
+    }
+    .reviews-block {
+        @include flex;
+        .reviews-block-text {
+            p {
+                &:first-child {
+                    @include styleTextHeader ($textColorDark,
+                    29px,
+                    28px);
+                    @include topBottom (0,
+                    20px);
+                    width: 245px;
+                }
+                &:last-of-type {
+                    @include styleTextHeader ($textColorDark,
+                    17px,
+                    24px);
+                    @include margin;
+                }
+            }
+        }
+    }
+}

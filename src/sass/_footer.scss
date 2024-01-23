@@ -1,0 +1,117 @@
+@use '_variables' as *;
+@use '_mixin' as *;
+@use '_helpers' as *;
+.footer {
+    background-image: url('#{$path}background-main.png');
+    @include backgroundParameters;
+    background-attachment: fixed;
+    padding-top: 98px;
+    padding-bottom: 21px;
+    .wrapper {
+        @include flex;
+        &:last-of-type {
+            margin-top: 96px;
+        }
+        .left-block {
+            .footer-title {
+                @include styleTextHeader ($whiteColorText,
+                29px,
+                34px);
+                @include margin;
+            }
+            .text-one {
+                @include styleTextHeader ($whiteColorText,
+                16px,
+                24px);
+                @include topBottom (18px,
+                29px);
+            }
+            label {
+                position: relative;
+                &::after {
+                    content: '';
+                    @include widthHeight(32px,
+                    32px);
+                    background-image: url('#{$path}arrow.png');
+                    background-size: contain;
+                    display: inline-block;
+                    position: absolute;
+                    right: 16px;
+                    top: -5px;
+                }
+                .email {
+                    border-radius: 10px;
+                    background: $whiteColorText;
+                    padding: 18px 16px;
+                    width: 315px;
+                    margin-bottom: 25px;
+                    border: 1px solid transparent;
+                    &:focus-visible {
+                        outline: $none;
+                        border: 1px solid $backgroundButton;
+                    }
+                }
+            }
+            .text-two {
+                @include styleTextHeader ($whiteColorText,
+                14px,
+                21px);
+                @include margin;
+                width: 260px;
+            }
+        }
+        .right-block {
+            @include flex;
+            gap: 95px;
+            p {
+                color: rgba(255, 255, 255, 0.50);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                @include topBottom (0,
+                10px);
+            }
+            .menu {
+                &_list {
+                    list-style: none;
+                    padding: 0;
+                    @include margin;
+                    li {
+                        margin-bottom: 15px;
+                        a {
+                            @include styleTextHeader ($whiteColorText,
+                            14px,
+                            24px);
+                            text-decoration: $none;
+                            position: relative;
+                            @include hoverLink;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wrapper-social {
+        @include margin;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        .social {
+            @include widthHeight (24px,
+            24px);
+            display: block;
+        }
+        .insta {
+            background-image: url('#{$path}insta.png');
+        }
+        .fac {
+            background-image: url('#{$path}facebook.png');
+        }
+        .tw {
+            background-image: url('#{$path}twitter.png');
+        }
+        .in {
+            background-image: url('#{$path}linkedln.png');
+        }
+    }
+}

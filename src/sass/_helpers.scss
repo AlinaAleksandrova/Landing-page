@@ -1,0 +1,109 @@
+@use '_variables' as *;
+@use '_mixin' as *;
+body {
+    font-family: $fontFamily, sans-serif;
+}
+
+header {
+    background-image: url('#{$path}background-main.png');
+    @include backgroundParameters;
+    background-attachment: fixed;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: auto;
+}
+
+.title-section-light {
+    @include styleTextHeader ($textColorLight,
+    67px,
+    66px);
+    @include margin;
+}
+
+.title-section-dark {
+    @include styleTextHeader ($textColorLight,
+    67px,
+    66px);
+    @include margin;
+}
+
+.big-button {
+    @include Button (62px);
+}
+
+.small-button {
+    @include Button(42px);
+}
+
+.paddingSection {
+    @include paddingSection;
+}
+
+.cart-product {
+    border-radius: 16px;
+    background: $whiteColorText;
+    width: 335px;
+    padding: 32px 24px;
+    gap: 16px;
+    overflow: hidden;
+    img {
+        transition: 1s;
+        display: block;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .price {
+        @include styleTextHeader ($textColorLight,
+        17px,
+        21px);
+        @include flex;
+        margin-bottom: 39px;
+        p {
+            @include margin;
+            span {
+                font-size: 18px;
+            }
+        }
+    }
+    .info-s {
+        width: 107px;
+        height: 26px;
+        border-radius: 20px;
+        background: #F1EEF8;
+        text-align: $textAlignCem;
+        @include styleTextHeader ($backgroundButton,
+        16px,
+        24px);
+    }
+    .title-product {
+        @include styleTextHeader ($textColorLight,
+        29px,
+        34px);
+        @include margin;
+    }
+    .name-product {
+        @include styleTextHeader ($textColorLight,
+        18px,
+        21px);
+        @include topBottom (0,
+        10px);
+    }
+    .link-product {
+        @include linkSeeDet(61px);
+    }
+}
+
+.slide_right {
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #D80286;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+    &:hover {
+        box-shadow: inset 400px 0 0 0 #D80286;
+        color: $whiteColorText;
+    }
+}
